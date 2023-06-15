@@ -10,21 +10,31 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 
 public class acca extends AppCompatActivity implements View.OnClickListener {
-ImageView menu;
+    ImageView menu;
+    ImageButton player;
+    ImageButton profile;
+    Intent in;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_acca);
         menu = (ImageView) findViewById(R.id.imageView4);
         menu.setOnClickListener(this);
+        player = (ImageButton) findViewById(R.id.imageButton2);
     }
 
     @Override
     public void onClick(View v) {
-        switch (v.getId())
-        {
+        switch (v.getId()) {
             case R.id.imageView4:
-                Intent in = new Intent(this,screen_signin.class);
+                in = new Intent(this, menu.class);
                 startActivity(in);
+            case R.id.imageButton2:
+                in = new Intent(this, player.class);
+                startActivity(in);
+            case R.id.imageButton3:
+                in = new Intent(this, Profile.class);
+                startActivity(in);
+        }
     }
 }
