@@ -21,6 +21,9 @@ public class acca extends AppCompatActivity implements View.OnClickListener {
         menu = (ImageView) findViewById(R.id.imageView4);
         menu.setOnClickListener(this);
         player = (ImageButton) findViewById(R.id.imageButton2);
+        player.setOnClickListener(this);
+        profile = (ImageButton) findViewById(R.id.imageButton3);
+        profile.setOnClickListener(this);
     }
 
     @Override
@@ -29,12 +32,15 @@ public class acca extends AppCompatActivity implements View.OnClickListener {
             case R.id.imageView4:
                 in = new Intent(this, menu.class);
                 startActivity(in);
+                break;
             case R.id.imageButton2:
                 in = new Intent(this, player.class);
                 startActivity(in);
+                break;
             case R.id.imageButton3:
                 in = new Intent(this, Profile.class);
                 startActivity(in);
+                break;
         }
     }
 }
